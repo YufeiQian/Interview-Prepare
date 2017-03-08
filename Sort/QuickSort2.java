@@ -1,4 +1,3 @@
-package sort;
 import java.io.*;
 
 public class QuickSort2 {
