@@ -57,5 +57,6 @@ class quickSort {
 			System.out.print(num + " ");
 		}
 		System.out.println("");
+		System.out.println("");
 	}
 }
