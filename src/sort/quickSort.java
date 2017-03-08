@@ -1,3 +1,4 @@
+package sort;
 class quickSort {
 
 	public void quicksort(int[] a, int left, int right) {
