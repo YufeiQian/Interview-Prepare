@@ -22,7 +22,7 @@ class MergeSort {
 			a[k] = nums[k];
 		}
 		int i = start, j = mid + 1;
-		for (int k = start; k < end; k++) {
+		for (int k = start; k <= end; k++) {
 			if (i > mid) 			nums[k] = a[j++];
 			else if (j > end) 		nums[k] = a[i++];
 			else if (a[i] > a[j]) 	nums[k] = a[j++];
