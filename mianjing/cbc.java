@@ -29,12 +29,12 @@ public class cbc {
 		int lastIndex = s.lastIndexOf(t);
 		// Removing first occurrence of String s
 		if (firstIndex != -1) {
-			String newString = s.substring(0, firstIndex) + (firstIndex + m == n ? "" : s.substring(firstIndex + m, n));
+			String newString = s.substring(0, firstIndex) + s.substring(firstIndex + m, n);
 			lenLeft = dfs(map, newString, t);
 		}
 		// Remove last occurrence of String s, skip if duplicated
 		if (lastIndex != firstIndex) {
-			String newString = s.substring(0, lastIndex) + (lastIndex + m == n ? "" : s.substring(lastIndex + m, n));
+			String newString = s.substring(0, lastIndex) + s.substring(lastIndex + m, n);
 			lenLeft = Math.min(lenLeft, dfs(map, newString, t));
 		}
 		// Add result to map
