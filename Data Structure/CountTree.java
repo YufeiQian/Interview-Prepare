@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 /*
@@ -69,21 +70,30 @@ public class CountTree {
             System.out.println("Unable to find Node " + k);
             return 0;
         }
-        if (k == node.count) return node.val;
-        else if (k < node.count) return findKthElement(node.left, k);
-        else return findKthElement(node.right, k - node.count);
+        if (k == node.count) {
+            return node.val;
+        } else if (k < node.count) {
+            return findKthElement(node.left, k);
+        } else {
+            return findKthElement(node.right, k - node.count);
+        }
     }
     
     private TreeNode removeElement(TreeNode root, int n) {
-        if (root == null) return null;
-        if (n > root.val) root.right = removeElement(root.right, n);
-        else if (n < root.val) {
+        if (root == null) {
+            return null;
+        }
+        if (n > root.val) {
+            root.right = removeElement(root.right, n);
+        } else if (n < root.val) {
             root.left = removeElement(root.left, n);
             root.count--;
-        }
-        else {
-            if (root.left == null) return root.right;
-            if (root.right == null) return root.left;
+        } else {
+            if (root.left == null) {
+                return root.right;
+            } else if (root.right == null) {
+                return root.left;
+            }
             TreeNode parent = null, newRoot = root.left;
             while (newRoot.right != null) {
                 parent = newRoot;
